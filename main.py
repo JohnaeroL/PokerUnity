@@ -38,6 +38,7 @@ def start(message):
                          .format(message.from_user), reply_markup=marcup)
     cur.close()
     base.close()
+    # создание БД и приветствие пользователя
 
 
 def buy_in(message):
@@ -69,6 +70,7 @@ def buy_in(message):
                                           " снова введите 'Buy-in.'\nХорошей игры!", reply_markup=marcup)
     cur.close()
     base.close()
+    # добавление значения "Бай-ин" в БД
 
 
 def prize(message):
@@ -104,6 +106,7 @@ def prize(message):
                          reply_markup=marcup)
     cur.close()
     base.close()
+    # добавление значения "Приз" в БД
 
 
 @bot.message_handler(commands=['delete'])
@@ -116,6 +119,7 @@ def delete(message):
     bot.send_message(message.chat.id, "✅\nВаши данные удалены")
     cur.close()
     base.close()
+    # функция удаления пользователя и его статистики из БД
 
 
 @bot.message_handler(content_types=['text'])
@@ -163,6 +167,7 @@ def bot_message(message):
                                           "\n'💵 Buy-in' или '💰 Prize'")
     cur.close()
     base.close()
+    # построение статистики пользователя
 
 
 bot.polling(none_stop=True)
