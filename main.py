@@ -5,6 +5,7 @@ import os
 from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
+# обращение к файлу .env, в котором находится Токен бота
 
 bot = telebot.TeleBot(os.getenv('TOKEN'))
 
